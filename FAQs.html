@@ -28,6 +28,23 @@
 
     <div>&lt;div data-sellingfastapp="{{ product.title }}"&gt;&lt;/div&gt;</div>
 
+    <h2>Set up to display quantity sold on products page</h2>
+
+    <ul>
+      <li>
+        Find product-template.liquid or product-meta.liquid or
+        product-info.liquid file, and then find the following code snippet:
+      </li>
+    </ul>
+
+    <div>&gt;{{ product.title }}&lt;</div>
+
+    <ul>
+      <li>Copy the code below and paste under the code above</li>
+    </ul>
+
+    <div>&lt;div data-sellingfastapp="{{ product.title }}"&gt;&lt;/div&gt;</div>
+
     <!-- <div data-sellingfastapp="{{ product.title }}"></div> -->
   </body>
 </html>
