@@ -1,0 +1,106 @@
+---
+layout: post
+title: "Additional Set-Up and Troubleshooting"
+subtitle: "This guide will walk you through troubleshooting and extending Selling Fast App's Functionality."
+date: 2020-01-26 23:45:13 -0400
+background: '/img/posts/troubleshooting.jpg'
+---
+
+<h2 class="section-heading">Who this guide is meant for</h2>
+
+<h3>Unexpected Behaviour</h3>
+
+<p>Is the Selling Fast App beahving unexpectedly? Well we are here to help</p>
+
+<p>The Selling Fast team aims to provide a seamless experience to Shopify merchants allowing them to modify their online
+    store's appearance with a super easy set-up process that requires no coding.</p>
+
+<p>However on some online stores the app may behave unexpectedly. An example of this unexpected behaviour is shown
+    below. In this case the product's quantity sold is appearing on top of the image instead of below the product title.
+</p>
+<img class="img-fluid" src="{{site.baseurl}}/img/posts/bad-example.jpeg" alt="Demo Image" />
+
+<blockquote class="blockquote">Product quantity sold appearing on top of product image instead of below product title.
+</blockquote>
+
+<p>This issue may arise if your shop's theme is not currently supported by the Selling Fast App.</p>
+
+<h3>Merchants who want to show quantity sold on collections outside of the catalouge (eg. Home page)</h3>
+<p>Want to extend Selling Fast to other pages on your store? <a
+        href="/startbootstrap-clean-blog-jekyll/2020/01/27/manual-setup#extending">Let's go</a></p>
+<p><a href="/startbootstrap-clean-blog-jekyll/2020/01/27/manual-setup#extending">Skip to section</a></p>
+
+<h3>Display quantity on individual Product Page</h3>
+<p>Want to extend Selling Fast to individual product pages on your store? <a
+        href="/startbootstrap-clean-blog-jekyll/2020/01/27/manual-setup#individual">Let's go</a></p>
+<p><a href="/startbootstrap-clean-blog-jekyll/2020/01/27/manual-setup#individual">Skip to section</a></p>
+
+
+<h2 class="section-heading">A Simple Fix</h2>
+
+<p>Go to your <em style="font-style: oblique;">Online store -> Theme -> Select the Theme that you want to
+        add code -> Action -> Edit Code.</em></p>
+
+<p>In the snippets folder, open one of the following files:
+    <li><strong>product-card-grid.liquid</strong> </li>
+    <li><strong>product-card.liquid</strong></li>
+    <li><strong>product-thumbnail.liquid</strong></li>
+    <li><strong>product-info.liquid</strong></li>
+    <br />Each theme has
+    different file name.
+    <br />
+    In this file, find the following code:
+</p>
+
+<div style="background-color: ghostwhite; padding: 20px; border-radius: 10px;">
+    {% raw %}
+    &gt;{{ product.title }}&lt; {% endraw %} </div>
+
+<p>Copy the code below and paste under the code above</p>
+
+<div style="background-color: ghostwhite; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+    {% raw %}
+    &lt;div data-sellingfastapp="{{ product.title }}"&gt;&lt;/div&gt; {% endraw %} </div>
+
+<h2 id="extending">Extending to Other Pages</h2>
+
+<p>Go to your <em style="font-style: oblique;">Online store -> Theme -> Select the Theme that you want to
+        add code -> Action -> Edit Code.</em></p>
+
+<p>In the snippets folder, open one of the following files:
+    <li><strong>product-card-grid.liquid</strong> </li>
+    <li><strong>product-card.liquid</strong></li>
+    <li><strong>product-thumbnail.liquid</strong></li>
+    <li><strong>product-info.liquid</strong></li>
+    <br />Each theme has
+    different file name.
+    <br />
+    In this file, find the following code:
+</p>
+
+<div style="background-color: ghostwhite; padding: 20px; border-radius: 10px;">
+    {% raw %}
+    &gt;{{ product.title }}&lt; {% endraw %} </div>
+
+<p>Copy the code below and paste under the code above</p>
+
+<h2>Individual Products Page</h2>
+
+<p>In the sections folder, open one of the following files:
+    <li><strong>product-template.liquid</strong> </li>
+    <li><strong>product-meta.liquid</strong></li>
+    <li><strong>product-info.liquid</strong></li>
+    <br />The file name may vary from theme to theme.
+    <br />
+    In this file, find the following code snippet:
+</p>
+
+<div style="background-color: ghostwhite; padding: 20px; border-radius: 10px;">
+    {% raw %}
+    &gt;{{ product.title }}&lt; {% endraw %} </div>
+
+<p>Copy the code below and paste under the code above</p>
+
+<div style="background-color: ghostwhite; padding: 20px; border-radius: 10px;">
+    {% raw %}
+    &lt;div data-sellingfastapp="{{ product.title }}"&gt;&lt;/div&gt;{% endraw %} </div>
