@@ -5,18 +5,6 @@ author: Selling Fast Team
 url: "csa100.github.io"
 baseurl: "selling-fast-site"
 
-# for gh-pages
-lsi: false
-safe: true
-source: "./"
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
-
 # Social Profiles
 twitter_username:
 github_username:
