@@ -62,12 +62,45 @@
     </header>
     <!-- Post Content-->
     <article class="mb-4">
+
+        <!-- side nav styles-->
+        <style>
+            .sidenav {
+                display: flex;
+                justify-content: center;
+                gap: 25px;
+                width: 100%;
+                position: sticky;
+                z-index: 1;
+                top: 0;
+                background: whitesmoke;
+                overflow-x: hidden;
+                padding: 5px;
+                border-radius: 10px;
+            }
+
+            .sidenav a {
+                /* text-decoration: none;
+                color: #2196F3;
+                display: block; */
+            }
+
+            .sidenav a:hover {
+                /* color: #064579; */
+            }
+        </style>
+        <!-- side nav -->
+        <div class="sidenav">
+            <p><a href="#troubleshooting">Trouble Shooting</a></p>
+            <p><a href="#extending">Extending to Other Pages</a></p>
+            <p><a href="#individual">Extending to Product Page</a></p>
+        </div>
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <h2 class="section-heading">Who this guide is meant for</h2>
 
-                    <h3>Unexpected Behaviour</h3>
+                    <h3 id="troubleshooting">Unexpected Behaviour</h3>
 
                     <p>Is the Selling Fast App beahving unexpectedly? Well we are here to help</p>
 
@@ -87,21 +120,6 @@
                     </blockquote>
 
                     <p>This issue may arise if your shop's theme is not currently supported by the Selling Fast App.</p>
-
-                    <h3>Merchants who want to show quantity sold on collections outside of the catalouge (eg. Home page)
-                    </h3>
-                    <p>Want to extend Selling Fast to other pages on your store? <a href="post.html/#extending">Let's
-                            go</a>
-                    </p>
-                    <p><a href="post.html/#extending">Skip to section</a>
-                    </p>
-
-                    <h3>Display quantity on individual Product Page</h3>
-                    <p>Want to extend Selling Fast to individual product pages on your store? <a
-                            href="post.html/#individual">Let's go</a></p>
-                    <p><a href="post.html/#individual">Skip to
-                            section</a></p>
-
 
                     <h2 class="section-heading">A Simple Fix</h2>
 
@@ -130,6 +148,12 @@
 
                     <h2 id="extending">Extending to Other Pages</h2>
 
+                    <p>(<b>Note:</b> You need not follow the steps in this section if you have already followed those in
+                        the trouble shooting section)</p>
+
+                    <p>Merchants who want to show quantity sold on collections outside of the catalouge (eg. Home page)
+                    </p>
+
                     <p>Go to your <em style="font-style: oblique;">Online store -> Theme -> Select the Theme that you
                             want to
                             add code -> Action -> Edit Code.</em></p>
@@ -150,7 +174,8 @@
 
                     <p>Copy the code below and paste under the code above</p>
 
-                    <h2>Individual Products Page</h2>
+                    <h2 id="individual">Extend to Individual Products Page</h2>
+                    <p>Display quantity sold on individual product pages</p>
 
                     <p>In the sections folder, open one of the following files:
                         <li><strong>product-template.liquid</strong> </li>
